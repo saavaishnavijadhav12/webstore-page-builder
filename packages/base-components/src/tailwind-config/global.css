@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #000000;
+  --secondary: #ffffff;
+  --primary-btn-bg: #000000;
+  --secondary-btn-bg: #ffffff;
+  --primary-btn-text: #ffffff;
+  --secondary-btn-text: #000000;
+  --btn-border: #000000;
+  --btn-border-radius: 0.25rem;
+  --header-bg: #ffffff;
+  --footer-bg: #000000;
+  --footer-primary-text: #ffffff;
+  --footer-secondary-text: #ffffff;
+  --navigation-bar-bg: #f3f4f6;
+  --navigation-text: #605458;
+  --link: #1e40af;
+  --hover: #3b82f6;
+  --success: #22c55e;
+  --error: #ef4444;
+  --border-color: #9ca3af;
+  --breadcrumbs-text: #9a9a9a;
+  --card-radius: 0.25rem;
+  --card-border: #e2e8f0;
+  --input-radius: 0.25rem;
+  --input-border: #d3d3d3;
+  --separator: #9ca3af;
+  --accent: #000000;
+  --widget-edit-bar: #5db043;
+  --mega-menu-bg: #f1f1f1;
+  --ticker-bg: #000000;
+  --mega-menu-link: #44403c;
+  --loader-color: #000000;
+}
+
+@layer base {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 font-medium transition duration-300 ease-in-out rounded-btnBorderRadius border-btnBorderColor;
+  }
+
+  .btn-primary {
+    @apply tracking-wider uppercase border text-primaryBtnTextColor hover:text-secondaryBtnTextColor bg-primaryBtnBgColor hover:bg-secondaryBtnBgColor;
+  }
+
+  .btn-secondary {
+    @apply tracking-wider uppercase border text-secondaryBtnTextColor hover:text-primaryBtnTextColor bg-secondaryBtnBgColor hover:bg-primaryBtnBgColor;
+  }
+
+  .btn-link {
+    @apply font-normal underline border-none text-linkColor hover:text-hoverColor;
+  }
+
+  .btn-text {
+    @apply p-0 font-normal border-none;
+  }
+
+  .btn-default {
+    @apply border hover:bg-gray-300;
+  }
+
+  .navigation {
+    @apply bg-navBgColor text-navColor;
+  }
+
+  .separator {
+    @apply py-3 text-xl font-semibold border-b border-separatorColor;
+  }
+
+  .separator-xs {
+    @apply mt-3 mb-3 border-b;
+  }
+
+  .separator-sm {
+    @apply mt-3 mb-3 border-b border-separatorColor;
+  }
+
+  .input {
+    @apply border rounded-inputBorderRadius border-inputBorderColor hover:border-black active:border-black;
+  }
+
+  .card {
+    @apply border border-cardBorderColor rounded-cardBorderRadius;
+  }
+
+  .heading-1 {
+    @apply py-2 text-2xl font-semibold;
+  }
+
+  .heading-2 {
+    @apply py-2 text-lg font-semibold;
+  }
+
+  .heading-3 {
+    @apply py-2 text-base font-medium;
+  }
+
+  .heading-4 {
+    @apply py-1 text-sm font-normal;
+  }
+
+  .heading-5 {
+    @apply py-2 text-xs font-light;
+  }
+
+  .loader-color {
+    @apply text-loaderColor;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"] {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.braintree-form__notice-of-collection {
+  display: none;
+}
+
+.braintree-form.braintree-sheet {
+  height: 375px;
+}
+@media screen and (max-width: 560px) {
+  .braintree-form.braintree-sheet {
+    height: 410px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .braintree-form.braintree-sheet {
+    height: 480px;
+  }
+}
+.braintree-form__field-group.braintree-hidden.braintree-checkbox {
+  visibility: visible;
+  overflow: visible;
+  padding-left: 18px;
+  opacity: 1;
+}
+
+.cordless-woodworking img {
+  height: auto;
+  width: 100%;
+}
+
+/* ADA required Class*/
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* PayPal Button */
+iframe.component-frame {
+  z-index: 10 !important;
+}
+
+/* Accordion Hide scrollbar for Chrome, Safari and Opera */
+.accordion-details-tab *::-webkit-scrollbar {
+  display: none;
+}
+
+.accordion-details-tab * {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@media print {
+  @page {
+    margin-bottom: 0;
+    size: auto;
+  }
+  .no-print,
+  footer {
+    display: none;
+  }
+
+  .print-style {
+    padding: 50px !important;
+  }
+  .print-flex-col {
+    flex-direction: column;
+  }
+  .print-flex-row {
+    flex-direction: row;
+  }
+  .print-overflow-x-none {
+    overflow-x: unset;
+  }
+  .print-table {
+    background-color: white;
+  }
+  .print-w-full {
+    width: 100%;
+  }
+  .print-display-block {
+    display: block;
+  }
+  .print-display-flex {
+    display: flex;
+    gap: 40px;
+  }
+
+}
+
+@media print and (orientation: landscape) {
+  .print-display-flex {
+   display: flex !important;
+   flex-direction: column !important;
+  }
+ .shipping-card-container{
+  break-inside: avoid-page;
+ }
+}
+
+/* to show ellipsis, if text overflow after 2nd line */
+.ellipsis-text {
+  @apply overflow-hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+.custom-word-break {
+  word-break: break-word;
+}
+
+.ignore-tailwind ul {
+  list-style: unset;
+  padding: revert;
+}
+
+.ignore-tailwind ol {
+  list-style: auto;
+  padding: revert;
+}
+
+.pdp-alternate-image-slider .swiper-button-prev,
+.pdp-alternate-image-slider .swiper-button-next {
+  margin-top: -32px;
+}
+.pdp-alternate-image-slider .swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+
+.hero-image-overlay {
+  background-image: linear-gradient(-90deg, rgba(247, 250, 255, 0.7), rgba(247, 250, 255, 0.7) 80%);
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+@media (min-width: 768px) {
+  .hero-image-overlay {
+    background-image: linear-gradient(-90deg, hsla(0, 0%, 100%, 0), #f7faff 70%);
+  }
+}
+
+.custom-shadow{
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}

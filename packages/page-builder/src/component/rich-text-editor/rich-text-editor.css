@@ -1,0 +1,9 @@
+.ql-toolbar.ql-snow .ql-formats {
+  margin-right: 10px;
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  height: 80%;
+  padding: 10px 0;
+  background-color: white;
+}
