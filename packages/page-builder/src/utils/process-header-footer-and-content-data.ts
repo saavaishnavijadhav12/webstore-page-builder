@@ -57,7 +57,7 @@ export async function processHeaderFooterAndMainContentData(params: IProcessHead
 }
 
 export async function processContent(params: IProcessContentParams): Promise<Data> {
-  if (params?.data && typeof params?.data === "object" && Array.isArray(params?.data.content) && !params?.data?.isPageUnavailable) {
+  if (params?.data && typeof params?.data === "object" && Array.isArray(params?.data.content)) {
     const result = await preparedContentItem(params.data, params?.id, params?.searchParams, params?.contentPageId, params?.pageVariant);
     return result;
   }
